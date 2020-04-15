@@ -1,8 +1,55 @@
 {
+  "__inputs": [
+    {
+      "name": "Prometheus",
+      "label": "Prometheus Data Source",
+      "description": "Prometheus Data Source",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "bargauge",
+      "name": "Bar Gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "6.4.2"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
-        "$$hashKey": "object:395",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -17,7 +64,8 @@
   "editable": true,
   "gnetId": 11074,
   "graphTooltip": 0,
-  "iteration": 1586971625721,
+  "id": null,
+  "iteration": 1572697129883,
   "links": [
     {
       "asDropdown": false,
@@ -106,6 +154,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "null",
       "nullText": null,
+      "options": {},
       "pluginVersion": "6.4.2",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -193,6 +242,7 @@
       "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "70%",
       "prefix": "",
@@ -251,39 +301,32 @@
             "last"
           ],
           "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
             "mappings": [],
             "max": 100,
             "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 60
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 60
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ],
             "title": "",
             "unit": "percent"
           },
-          "overrides": [],
+          "override": {},
           "values": false
         },
-        "orientation": "horizontal",
-        "showUnfilled": true
+        "orientation": "horizontal"
       },
-      "pluginVersion": "6.7.2",
+      "pluginVersion": "6.4.2",
       "targets": [
         {
           "expr": "100 - (avg(irate(node_cpu_seconds_total{instance=~\"$node\",mode=\"idle\"}[30m])) * 100)",
@@ -335,6 +378,7 @@
       },
       "id": 164,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -345,7 +389,6 @@
       "styles": [
         {
           "alias": "Mounted on",
-          "align": "auto",
           "colorMode": null,
           "colors": [
             "rgba(50, 172, 45, 0.97)",
@@ -364,7 +407,6 @@
         },
         {
           "alias": "Avail",
-          "align": "auto",
           "colorMode": "value",
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -384,7 +426,6 @@
         },
         {
           "alias": "Used",
-          "align": "auto",
           "colorMode": "cell",
           "colors": [
             "rgba(50, 172, 45, 0.97)",
@@ -404,7 +445,6 @@
         },
         {
           "alias": "Size",
-          "align": "auto",
           "colorMode": null,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -422,7 +462,6 @@
         },
         {
           "alias": "Filesystem",
-          "align": "auto",
           "colorMode": null,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -440,7 +479,6 @@
         },
         {
           "alias": "IP",
-          "align": "auto",
           "colorMode": null,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -460,7 +498,6 @@
         },
         {
           "alias": "",
-          "align": "auto",
           "colorMode": null,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -529,7 +566,6 @@
         "x": 18,
         "y": 0
       },
-      "hiddenSeries": false,
       "hideTimeOverride": false,
       "id": 16,
       "legend": {
@@ -678,6 +714,7 @@
       "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -763,6 +800,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "pluginVersion": "6.4.2",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -834,7 +872,6 @@
         "y": 6
       },
       "height": "300",
-      "hiddenSeries": false,
       "id": 13,
       "legend": {
         "alignAsTable": true,
@@ -968,7 +1005,6 @@
         "x": 8,
         "y": 6
       },
-      "hiddenSeries": false,
       "id": 7,
       "legend": {
         "alignAsTable": true,
@@ -1110,7 +1146,6 @@
         "y": 6
       },
       "height": "300",
-      "hiddenSeries": false,
       "id": 157,
       "legend": {
         "alignAsTable": true,
@@ -1220,7 +1255,6 @@
         "x": 0,
         "y": 14
       },
-      "hiddenSeries": false,
       "id": 174,
       "legend": {
         "alignAsTable": true,
@@ -1340,7 +1374,6 @@
         "y": 14
       },
       "height": "300",
-      "hiddenSeries": false,
       "id": 156,
       "legend": {
         "alignAsTable": true,
@@ -1477,7 +1510,6 @@
         "x": 16,
         "y": 14
       },
-      "hiddenSeries": false,
       "id": 175,
       "legend": {
         "alignAsTable": true,
@@ -1580,7 +1612,6 @@
         "y": 22
       },
       "height": "300",
-      "hiddenSeries": false,
       "id": 161,
       "legend": {
         "alignAsTable": true,
@@ -1697,7 +1728,6 @@
         "y": 22
       },
       "height": "300",
-      "hiddenSeries": false,
       "id": 168,
       "legend": {
         "alignAsTable": true,
@@ -1813,7 +1843,6 @@
         "y": 22
       },
       "height": "300",
-      "hiddenSeries": false,
       "id": 160,
       "legend": {
         "alignAsTable": true,
@@ -1929,7 +1958,6 @@
         "y": 31
       },
       "height": "300",
-      "hiddenSeries": false,
       "id": 158,
       "interval": "",
       "legend": {
@@ -2059,7 +2087,6 @@
         "x": 12,
         "y": 31
       },
-      "hiddenSeries": false,
       "id": 169,
       "legend": {
         "alignAsTable": true,
@@ -2143,8 +2170,8 @@
       }
     }
   ],
-  "refresh": "5s",
-  "schemaVersion": 22,
+  "refresh": false,
+  "schemaVersion": 20,
   "style": "dark",
   "tags": [
     "Prometheus",
@@ -2155,15 +2182,11 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "text": "node-exporter",
-          "value": "node-exporter"
-        },
+        "current": {},
         "datasource": "Prometheus",
         "definition": "label_values(node_uname_info, job)",
         "hide": 0,
         "includeAll": false,
-        "index": -1,
         "label": "JOB",
         "multi": false,
         "name": "job",
@@ -2181,18 +2204,11 @@
       },
       {
         "allValue": null,
-        "current": {
-          "tags": [],
-          "text": "903ee75f09d0",
-          "value": [
-            "903ee75f09d0"
-          ]
-        },
+        "current": {},
         "datasource": "Prometheus",
         "definition": "label_values(node_uname_info{job=~\"$job\"}, nodename)",
         "hide": 0,
         "includeAll": true,
-        "index": -1,
         "label": "Host",
         "multi": true,
         "name": "hostname",
@@ -2211,16 +2227,11 @@
       {
         "allFormat": "glob",
         "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "datasource": "Prometheus",
         "definition": "label_values(node_uname_info{nodename=~\"$hostname\"},instance)",
         "hide": 0,
         "includeAll": true,
-        "index": -1,
         "label": "IP",
         "multi": false,
         "multiFormat": "regex values",
@@ -2239,15 +2250,11 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "/",
-          "value": "/"
-        },
+        "current": {},
         "datasource": "Prometheus",
         "definition": "",
         "hide": 2,
         "includeAll": false,
-        "index": -1,
         "label": "",
         "multi": false,
         "name": "maxmount",
@@ -2266,17 +2273,11 @@
       {
         "allFormat": "glob",
         "allValue": null,
-        "current": {
-          "isNone": true,
-          "selected": false,
-          "text": "None",
-          "value": ""
-        },
+        "current": {},
         "datasource": "Prometheus",
         "definition": "",
         "hide": 2,
         "includeAll": false,
-        "index": -1,
         "label": "环境",
         "multi": false,
         "multiFormat": "regex values",
@@ -2296,15 +2297,11 @@
       {
         "allFormat": "glob",
         "allValue": "",
-        "current": {
-          "text": "AudioScience 1",
-          "value": "AudioScience 1"
-        },
+        "current": {},
         "datasource": "Prometheus",
         "definition": "label_values(node_exporter_build_info{env=~'$env'},name)",
         "hide": 2,
         "includeAll": false,
-        "index": -1,
         "label": "名称",
         "multi": true,
         "multiFormat": "regex values",
@@ -2324,7 +2321,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {
@@ -2356,8 +2353,5 @@
   "timezone": "browser",
   "title": "Edge Playout - Node_Exporter",
   "uid": "hb7fSE0Zz",
-  "variables": {
-    "list": []
-  },
-  "version": 1
+  "version": 13
 }
