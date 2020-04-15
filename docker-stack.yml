@@ -106,4 +106,20 @@ services:
           - node.role==manager
       restart_policy:
         condition: on-failure
-
+  
+  portainer:
+    image: portainer/portainer
+    depends_on:
+      - prometheus
+    ports:
+      - 9000:9000
+      - 8000:8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      - monitor-net
+    deploy:
+      mode: global
+      restart_policy:
+          condition: on-failure
