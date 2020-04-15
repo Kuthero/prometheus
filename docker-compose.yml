@@ -3,6 +3,7 @@ version: '3.7'
 volumes:
     prometheus_data: {}
     grafana_data: {}
+    portainer_data: {}
 
 networks:
   front-tier:
@@ -97,6 +98,21 @@ services:
       - ./grafana/provisioning/:/etc/grafana/provisioning/
     env_file:
       - ./grafana/config.monitoring
+    networks:
+      - back-tier
+      - front-tier
+    restart: always
+
+  portainer:
+    image: portainer/portainer
+    depends_on:
+      - prometheus
+    ports:
+      - 9000:9000
+      - 8000:8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
     networks:
       - back-tier
       - front-tier
