@@ -48,8 +48,13 @@ scrape_configs:
       type: 'A'
       port: 8080
 
-#     static_configs:
-#          - targets: ['cadvisor:8080']
+    static_configs:
+        - targets: ['10.89.52.81:8080']
+          labels:
+            name: 'Barix_Low'
+        - targets: ['10.89.52.90:8080']
+          labels:
+            name: 'Barix_High'
 
   - job_name: 'node-exporter'
 
@@ -63,13 +68,13 @@ scrape_configs:
       port: 9100
       
     static_configs: #edge devices
-          - targets: ['10.89.52.81:9100'] #BarixLow
+          - targets: ['10.89.52.81:9100']
             labels:
               name: 'Barix_Low'
-          - targets: ['10.89.52.90:9100'] #BarixHigh
+          - targets: ['10.89.52.90:9100'] 
             labels:
               name: 'Barix_High'
-          - targets: ['10.89.52.188:9100'] #ASI_1 
+          - targets: ['10.89.52.188:9100']
             labels:
               name: 'AudioScience 1'
 
