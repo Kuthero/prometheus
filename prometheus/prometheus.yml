@@ -70,12 +70,22 @@ scrape_configs:
     static_configs: #edge devices
           - targets: ['10.89.52.81:9100']
             labels:
-              name: 'Barix_Low'
+              name: 'Barix 1 (L)'
           - targets: ['10.89.52.90:9100'] 
             labels:
-              name: 'Barix_High'
-          - targets: ['10.89.52.188:9100']
+              name: 'Barix 2 (H)'
+          - targets: ['10.89.52.110:9100']
             labels:
-              name: 'AudioScience 1'
-
-  
+              name: 'ASI 1'
+          - targets: ['10.89.52.191:9100']
+            labels:
+              name: 'ASI 2'          
+          - targets: ['10.89.52.86:9092']
+            labels:
+              name: 'Sound4 1'
+          - targets: ['10.89.52.182:9092']
+            labels:
+              name: 'Sound4 2'
+          - targets: ['10.89.52.95:9100']
+            labels:
+              name: 'Telos 1'
