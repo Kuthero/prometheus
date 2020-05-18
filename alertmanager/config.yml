@@ -3,8 +3,8 @@
 
  receivers:
      - name: 'slack'
-#       slack_configs:
-#           - send_resolved: true
-#             username: '<username>'
-#             channel: '#<channel-name>'
-#             api_url: '<incomming-webhook-url>'
+       slack_configs:
+           - send_resolved: true
+             username: '<username>'
+             channel: '#zce-alerts'
+             api_url: 'https://hooks.slack.com/services/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'
