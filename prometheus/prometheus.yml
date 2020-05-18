@@ -89,7 +89,11 @@ scrape_configs:
           - targets: ['10.89.52.95:9100']
             labels:
               name: 'Telos 1'
- 
+          - targets: ['95.136.11.220:9100']
+            labels:
+              name: 'Barix 3 (New)'
+
+
   - job_name: 'wmi-exporter'
 
     # Override the global default and scrape targets from this job every 5 seconds.
