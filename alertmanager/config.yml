@@ -1,0 +1,10 @@
+ route:
+     receiver: 'slack'
+
+ receivers:
+     - name: 'slack'
+       slack_configs:
+           - send_resolved: true
+             username: 'ZCE-AlertManager'
+             channel: '#zce-alerts'
+             api_url: 'https://hooks.slack.com/services/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'
