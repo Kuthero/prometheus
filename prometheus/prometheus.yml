@@ -89,3 +89,20 @@ scrape_configs:
           - targets: ['10.89.52.95:9100']
             labels:
               name: 'Telos 1'
+ 
+  - job_name: 'wmi-exporter'
+
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
+
+    dns_sd_configs:
+    - names:
+      - 'tasks.wmi-exporter'
+      type: 'A'
+      port: 9182
+      
+    static_configs: #edge devices          
+          
+          - targets: ['10.156.13.93:9182']
+            labels:
+              name: 'Joshua Windows Desktop Test'
