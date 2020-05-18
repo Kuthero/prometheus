@@ -7,4 +7,10 @@
            - send_resolved: true
              username: 'ZCE-AlertManager'
              channel: '#zce-alerts'
-             api_url: 'null'
+             api_url: 'https://hooks.slack.com/services/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'
+     - name: 'msteams'
+       slack_configs:
+           - send_resolved: true
+             username: 'ZCE-AlertManager'
+             channel: 'ZCE -  Alerts'
+             api_url: 'https://outlook.office.com/webhook/ce6ff0c9-c137-46b6-a00d-98593262efbb@122a527e-5b71-4eba-878d-9810b495b9e3/IncomingWebhook/6802f0416cd0437b9f194be23f772e0e/b11414ea-19cc-4c63-a823-342bedfae217'
