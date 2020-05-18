@@ -5,6 +5,6 @@
      - name: 'slack'
        slack_configs:
            - send_resolved: true
-             username: '<username>'
+             username: 'ZCE-AlertManager'
              channel: '#zce-alerts'
-             api_url: 'https://hooks.slack.com/services/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'
+             api_url: 'null'
